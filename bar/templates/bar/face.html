@@ -1,0 +1,116 @@
+{%extends  'bar/nav.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    body navv {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+        background: #f8f8f8;
+        background-image: url('data:image/svg+xml,%3Csvg width="100" height="20" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z" fill="%239C92AC" fill-opacity="0.05" fill-rule="evenodd"/%3E%3C/svg%3E');
+      }
+      #card--container {
+        width: 25rem;
+        padding: 12rem 1rem;
+        & * > * {
+          margin-bottom: 0.5rem;
+        }
+        // box-shadow: 3px 3px 5px 3px #cfd8dc;
+      
+        & .product--card {
+        }
+        & .product--image {
+          & img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            border: 3px solid #333;
+          }
+        }
+        & .product--name {
+          text-align: center;
+          padding: 0.25rem;
+          font-size: 1.25rem;
+        }
+      }
+      
+      #button--row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .qty--button{
+        width: 100px;
+        padding: 0rem 1rem;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Open Sans;
+        font-weight: 700;
+        font-size: 2.5rem;
+        // text-shadow: 1px 2px #cfd8dc;
+        background: transparent;
+        border: 3px solid #333;
+        box-shadow: 4px 4px #f50057;
+        cursor: pointer;
+        transform: 2s ease;
+        &:active {
+          position: relative;
+          left: 4px;
+          top: 4px;
+          box-shadow: none;
+          text-shadow: none;
+        }
+      }
+    </style>      
+
+<div id="card--container" style="    padding-top: 149px;">
+    <div class="product--card">
+      <div class="product--image">
+        <img src="{% static 'image/download.jpg' %}" alt="A picture of a chesse and cracker platter" width="100%" >
+      </div>
+      <div class="product--name" style="padding: 10px;" id='result'>
+       
+      </div>
+      
+      <div id="button--row">
+        
+        <button class="qty--button" type="button" @click="subtract"> <a href="{%  url 'predict' %}"> Try </a>  </button>
+        <span> face shape- Triangle</span>
+        <button class="qty--button" type="button" @click="add"> <a href=""> X </a> </button>
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+ <!--See Image Uploaded-->
+ <div class="row" style="justify-content:center;text-align:center;">
+  {% if classe %}
+  <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+      {% if file_url %}
+    <img src="{{ file_url }}" class="img-fluid" height="150px" width="150px">
+      {% endif %}
+      <p><b>{{classe}}</b></p>
+    <br>
+  {% else %}
+  {% endif %}
+</div>
+</div>
+</div>
+</div>
+
+  <script>
+  
+
+
+{% endblock content %}

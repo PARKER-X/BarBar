@@ -1,0 +1,55 @@
+{% extends 'bar/nav.html' %}
+{% load static %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>DETECTION D'AUTISME</title>
+  </head>
+  <body>
+        <div class="box">
+          <div class="page_text">
+            <div style="text-align:center;">
+                <h1>Face shape Detector</h1>
+            </div>
+
+            {% comment %} <!--See Image Uploaded-->
+            <div class="row" style="justify-content:center;text-align:center;">
+              {% if classe %}
+              <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+                  {% if file_url %}
+                <img src="{{ file_url }}" class="img-fluid" height="150px" width="150px">
+                  {% endif %}
+                  <p><b>{{classe}}</b></p>
+                <br>
+              {% else %}
+              {% endif %}
+            </div>
+          </div> {% endcomment %}
+
+            <div class="container" style="justify-content:center;text-align:center;display:flex;">
+                <div class="right" >
+                      <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label> Upload </label>
+                            <input type="file" name="upload1" accept="image/*" label='hello'>
+                            <br>
+                            <br>
+                            <button class="bttn" type="submit" name="cnnBtn">Detecter</button>
+                      </form>
+                </div>
+
+            </div>
+              
+          </div>
+        </div>
+        {% endblock content %}
+  </body>
+</html> 
+

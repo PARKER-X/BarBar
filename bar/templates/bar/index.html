@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarBar</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+#banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #009688), url(https://i.postimg.cc/wvWYvN24/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.logo {
+    width: 140px;
+    position: absolute;
+    top: 4%;
+    left: 10%;
+}
+
+.banner-text {
+    text-align: center;
+    color: #fff;
+    padding-top: 180px;
+}
+
+.banner-text h1 {
+    font-size: 130px;
+    font-family: "Kaushan Script";
+}
+
+.banner-text p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.banner-btn {
+    margin: 76px auto;
+}
+
+.banner-btn a {
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #fff;
+    border: 0.5px solid #fff;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
+}
+
+.banner-btn a span {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.banner-btn a:hover span {
+    width: 100%;
+}
+
+.banner-btn a:hover {
+    color: #000;
+}
+
+#sideNav {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: -250px;
+    top: 0;
+    background: #009688;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 50px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+#menuBtn {
+    width: 50px;
+    height: 50px;
+    background: #009688;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+    border-radius: 3px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#menuBtn img {
+    width: 20px;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 770px) {
+    .banner-text h1 {
+        font-size: 44px;
+    }
+    .banner-btn a {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+
+/* /--features--/  */
+
+#features {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.title-text p {
+    margin: auto;
+    font-size: 20px;
+    color: #009688;
+    font-weight: bold;
+}
+
+.title-text {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.title-text h1 {
+    font-size: 50px;
+}
+
+.title-text p {
+    margin: auto;
+    font-size: 20px;
+    color: #009688;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.title-text p::after {
+    content: "";
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#019587, #fff);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.features-box {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.features {
+    flex-basis: 50%;
+}
+
+.features-img {
+    flex-basis: 50%;
+    margin: auto;
+}
+
+.features-img img {
+    width: 70%;
+    border-radius: 10px;
+    margin: right;
+}
+
+.features h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #009688;
+}
+
+.features-desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.features-icon .bx {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+}
+
+.features-text p {
+    padding: 0 20px;
+    text-align: initial;
+}
+
+@media screen and (max-width: 770px) {
+    .title-text h1 {
+        font-size: 35px;
+    }
+    .features {
+        flex-basis: 100%;
+    }
+    .features-img {
+        flex-basis: 100%;
+    }
+    .features-img img {
+        width: 100%;
+    }
+}
+
+
+/* /--services--/ */
+
+#services {
+    width: 100%;
+    padding: 70px 0;
+    background: #efefef;
+}
+
+.sevice-box {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.single-service {
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+
+.single-service img {
+    width: 100%;
+    border-radius: 7px;
+    margin: flex;
+}
+
+
+/* .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+} */
+
+.img-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-box img {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 600px;
+    height: auto;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #009688);
+    opacity: 0;
+    transition: 1s;
+}
+
+.single-service:hover .overlay {
+    opacity: 1;
+}
+
+.service-desc {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 1s;
+    transform: translate(-50%);
+    transition: 1s;
+}
+
+.hr {
+    background: #fff;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+
+.service-desc p {
+    font-size: 14px;
+}
+
+.single-service:hover .service-desc {
+    bottom: 40%;
+    opacity: 1s;
+}
+
+@media screen and (max-width: 770px) {
+    .sevice-box {
+        width: 100%;
+    }
+    .single-service {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .service-desc {
+        font-size: 12px;
+    }
+    hr {
+        margin: 5px auto;
+    }
+    .single-service:hover .service-desc {
+        bottom: 25% !important;
+    }
+    .img-box img {
+        margin-bottom: 20px;
+        width: 300px;
+        height: auto;
+    }
+}
+
+#testimonial {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.testimonial-row {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.testimonial-col {
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #00968814;
+}
+
+.testimonial-col {
+    font-size: 14px;
+}
+
+
+/*--footer--*/
+
+#footer {
+    padding: 100px 0 20px;
+    background: #efefef;
+    position: relative;
+}
+
+.footer-row {
+    display: flex;
+}
+
+.footer-left,
+.footer-right {
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-row h1 {
+    margin: 10px 0;
+}
+
+.footer-row p {
+    line-height: 35px;
+}
+
+.footer-left .bx,
+.footer-right .bx {
+    font-size: 20px;
+    color: #009688;
+    margin: 10px;
+}
+
+.footer-img {
+    max-width: 370px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-links .bx {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid #009688;
+    margin: 40px 5px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.social-links .bx:hover {
+    background: #009688;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+@media screen and (max-width: 770px) {
+    .footer-row {
+        flex-direction: column;
+    }
+    .footer-left,
+    .footer-right {
+        flex-basis: 100%;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .footer-right {
+        text-align: left;
+    }
+    .features-img {
+        top: 25px;
+    }
+}
+
+
+/* ........./ Testimonial /.......... */
+
+#testimonials {
+    padding: 5rem 0;
+}
+
+.testimonial-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.testimonial-box .checked {
+    color: #ff9529;
+}
+
+.testimonial-box .testimonial-text {
+    margin: 1rem 0;
+    color: #444;
+}
+
+.testimonial-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.customer-photo img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+@media (max-width: 500px) {
+    .testimonial-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+<body>
+    <section id="banner">
+       <a href=""> <img src="https://i.postimg.cc/zfZzZT2n/logo.png" class="logo"> </a>
+       <ul style="    text-align: center;
+       justify-content: center;
+       position: absolute;
+       left: 470px;
+       text-decoration: none;
+       list-style: none;
+       top: 40px;
+       /* column-gap: 1px; */
+       font-size: 1rem;
+       display: flex;">
+                <li style="padding-right: 20px; "><a href="#banner" style="text-decoration: none; color: white;">HOME</a></li>
+                <li style="padding-right: 20px;"><a href="#features" style="text-decoration: none; color: white;">FEATURES</a></li>
+                <li style="padding-right: 20px;"><a href="#service" style="text-decoration: none; color: white;">SERVICES</a></li>
+                <li style="padding-right: 20px;"><a href="#testimonials" style="text-decoration: none; color: white;">TESTIMONIALS</a></li>
+                <li style="padding-right: 20px;"><a href="#footer" style="text-decoration: none; color: white;">MEET US</a></li>
+            </ul>
+          
+        <div class="banner-text">
+            <h1>Hair Salon</h1>
+            <p> Style Your Hair Is Style Your Life</p>
+            <div class="banner-btn">
+                <a href="#service"><span></span><b>Hairstyle</b></a>
+                <a href="#features"><span></span><b>Book now</b></a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <div id="menuBtn">
+        <img src="https://i.postimg.cc/j5RRCtb2/menu.png" id="menu">
+    </div> -->
+
+    <!--Features-->
+
+    <section id="features">
+        <div class="title-text">
+            <p>FEATURES</p>
+            <h1>Why Choose Us</h1>
+        </div>
+        <div class="features-box">
+            <div class="features">
+                <h1><b>Experienced Staff</b></h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class='bx bx-check-shield'></i>
+                    </div>
+                    <div class="features-text">
+                        <p>We have experienced staff with great skills. They now varities of hairstyles.</p>
+                    </div>
+                </div>
+                <h1><b>Pre Booking Online</b></h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class='bx bx-check-square'></i>
+                    </div>
+                    <div class="features-text">
+                        <p>You can book in advanced pre booking option available. it's saves customer times.</p>
+                    </div>
+                </div>
+                <h1><b>Affordable Cost</b></h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class='bx bx-rupee'></i>
+                    </div>
+                    <div class="features-text">
+                        <p>Our cost are Affordable with best qualities and varities of hairstyles with good review of customer. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-img">
+                <img src="https://i.postimg.cc/qMW0y8T9/barber-man.jpg">
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <!--Service-->
+    <section id="service">
+        <div class="title-text">
+            <p>SERVICES</p>
+            <h1><b>We Provide Better</b></h1>
+        </div>
+        <div section="service-box">
+            <div class="img-box container">
+                <div class="single-service">
+                    <img src="https://i.postimg.cc/JhLLdMtx/pic-1.jpg">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Hair Styling</h3>
+                        <hr>
+                        <p>this is test under description of barbeer foundatin this is test under description of barber foundation</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="https://i.postimg.cc/t4Pb5YR7/pic-2.jpg">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Beard Trim</h3>
+                        <hr>
+                        <p>this is test under description of barbeer foundatin this is test under description of barber foundation</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="https://i.postimg.cc/VLJmJK3q/pic-3.jpg">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Hair Cut</h3>
+                        <hr>
+                        <p>this is test under description of barbeer foundatin this is test under description of barber foundation</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="https://i.postimg.cc/9fYj6K7h/pic-4.jpg">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Dry Shampoo</h3>
+                        <hr>
+                        <p>this is test under description of barbeer foundatin this is test under description of barber foundation</p>
+                    </div>
+                </div>
+    </section>
+    <!--Testimonial-->
+    <!-- <section id="testimonial">
+        <div class="title-text">
+            <p>TESTIMONIALS</p>
+            <h1><b>What Clients Say</b></h1>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-col">
+                <p>Donec eget ultricies sapi. St ultricies sapi. Sed porttitor, mauris ater lob facilisis,elit sapie eleifend ligula.Donec eget ultricies sapi. Sed porttitor, mauris</p>
+            </div>
+            <div class="testimonial-col">
+                <p>Donec eget ultricies sapi. Sed porttitor, mauris ater lob facilisis,elit sapie eleifend ligula.Donec eget ultricies sapi. Sed porttitor, mauris.</p>
+            </div>
+            <div class="testimonial-col">
+                <p>Donec eget ultricies sapi. Sed porttitor, mauris ater ricies sapi. Sed porttitor, mauris ater lob facilisis,elit sapie eleifend ligula.Donec eget ultricies sapi. Sed porttitor, mauris
+                </p>
+            </div>
+        </div>
+    </section> -->
+    <!--footer-->
+    <section id="testimonials">
+        <!-- <h2 class="testimonial-title">What Our Customers Say</h2> -->
+        <div class="title-text">
+            <p>TESTIMONIALS</p>
+            <h1><b>What Our Customers Say</b></h1>
+        </div>
+        <div class="testimonial-container container">
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/5Nrw360Y/male-photo1.jpg" alt="" />
+                        <p class="customer-name">Ross Lee</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                </div>
+                <p class="testimonial-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.
+                </p>
+
+            </div>
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/c1k4jFvZ/alexander-hipp-iEEBWgY_6lA-unsplash.jpg" alt="" />
+                        <p class="customer-name">Sam Root</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                </div>
+                <p class="testimonial-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.
+                </p>
+
+            </div>
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/fy90qvkV/male-photo3.jpg" alt="" />
+                        <p class="customer-name">Ben Roy</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                    <span class="fa fa-star checked"><i class='bx bxs-star'></i></span>
+                </div>
+                <p class="testimonial-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit voluptas cupiditate aspernatur odit doloribus non.
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <img src="https://i.postimg.cc/50pbCT43/footer-img.png" class="footer-img">
+        <div class="title-text">
+            <p>CONTACT</p>
+            <h1>Visit Us Today</h1>
+        </div>
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Opening Hours</h1>
+                <p><i class='bx bxs-time'></i>Monday to Friday - 9am to 9pm</p>
+                <p><i class='bx bxs-time'></i>Satuday and Sunday - 8am to 11pm</p>
+            </div>
+            <div class="footer-right">
+                <h1>Get In Touch</h1>
+                <p>#03 abc colony, xyz City IN <i class='bx bx-map'></i></p>
+                <p>example @website.com<i class='bx bx-paper-plane'></i></p>
+                <p>+01 12345678 <i class='bx bx-phone'></i></p>
+
+            </div>
+        </div>
+        <div class="social-links">
+            <i class='bx bxl-facebook'></i>
+            <i class='bx bxl-instagram'></i>
+            <i class='bx bxl-twitter'></i>
+            <i class='bx bxl-youtube'></i>
+        </div>
+
+
+</body>
+<script>
+            var menuBtn = document.getElementById("menuBtn")
+        var sideNav = document.getElementById("sideNav")
+        var menu = document.getElementById("menu")
+        sideNav.style.right == "-250px";
+        menuBtn.onclick = function() {
+            if (sideNav.style.right == "-250px") {
+                sideNav.style.right = "0";
+                menu.src = "https://i.postimg.cc/cJRss6PP/close.png";
+            } else {
+                sideNav.style.right = "-250px";
+                menu.src = "https://i.postimg.cc/j5RRCtb2/menu.png";
+            }
+        }
+
+        $(document).ready(function() {
+
+            $("a").on('click', function(event) {
+
+                if (this.hash !== "") {
+
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+</script>
+</html>

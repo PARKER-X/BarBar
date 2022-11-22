@@ -8,3 +8,6 @@ scikit-learn==1.0.2
 scipy==1.7.3
 tensorflow==2.9.1
 virtualenv==20.13.2
+asgiref==3.5.1
+sqlparse==0.4.2
+tzdata==2022.1
